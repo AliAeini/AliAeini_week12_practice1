@@ -1,20 +1,22 @@
-let accordions_header = document.querySelectorAll(".accordion_header")
-accordions_header.forEach(accordion_toggler => {
-    accordion_toggler.addEventListener("click",function(){
-        let arrow = accordion_toggler.getElementsByTagName("i")
-        $(".fa-solid").attr("class", "fa fa-solid fa-chevron-down")
-        $(".accordion_body").css("display", "none")
-        $(".accordion_header").css("backgroundColor", "unset")
-        $(accordion_toggler).css("backgroundColor", "rgb(6, 238, 255)")
-        $(accordion_toggler).next().css("display", "block")
-        arrow[0].setAttribute("class", "fa fa-solid fa-chevron-up")
+let accordion_item = document.querySelectorAll(".accordion_item")
+
+accordion_item.forEach((item)=>{
+    let item_header = item.querySelector(".accordion_header")
+    item_header.addEventListener("click",()=>{
+        let accordion_body = item.querySelector(".accordion_body")
+        let arrow = item_header.querySelector(".fa-solid")
+        if(accordion_body.style.display == "none"){
+            arrow.setAttribute("class", "fa fa-solid fa-chevron-up")
+            accordion_body.style.display = "block"
+        }else{
+            accordion_body.style.display = "none"
+            arrow.setAttribute("class", "fa fa-solid fa-chevron-down")
+        }
+        accordion_body.addEventListener("click",()=>{
+            accordion_body.style.display = "none"
+            arrow.setAttribute("class", "fa fa-solid fa-chevron-down")
+        })
     })
 })
-$(".accordion_body").click(()=>{
-    $(".fa-solid").attr("class", "fa fa-solid fa-chevron-down")
-    $(".accordion_body").css("display", "none")
-    $(".accordion_header").css("backgroundColor", "unset")
-})
-
 
 
