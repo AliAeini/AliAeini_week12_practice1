@@ -12,10 +12,6 @@ accordion_item.forEach((item)=>{
             accordion_body.style.display = "none"
             arrow.setAttribute("class", "fa fa-solid fa-chevron-down")
         }
-        accordion_body.addEventListener("click",()=>{
-            accordion_body.style.display = "none"
-            arrow.setAttribute("class", "fa fa-solid fa-chevron-down")
-        })
     })
 })
 
