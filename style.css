@@ -9,21 +9,37 @@
     margin: auto;
     margin-top: 100px;
     border-radius: 5px;
-    border: 1px solid rgb(6, 238, 255);
+}
+.accordion_item{
+    margin: 5px;
+}
+.accordion_item:last-child{
+    border-bottom:1px solid rgb(6, 238, 255);
+    border-radius: 5px;
 }
 .accordion_header{
     padding: 10px;
-    border-bottom: 1px solid rgb(6, 238, 255);
-    border-top: 1px solid rgb(6, 238, 255);
+    border: 1px solid rgb(6, 238, 255);
     display: flex;
+    border-radius: 5px;
     justify-content: space-between;
 }
 .accordion_header i {
     font-size: 14px;
+    transition: all .2s ease-in;
 }
 .accordion_body{
     display: none;
     padding: 10px;
     line-height: 20px;
     text-align: justify;
+}
+.arrow_rotate{
+    transform: rotate(180deg);
+}
+.d_block{
+    display: block;
+}
+.bg_aqua{
+    background-color: rgb(6, 238, 255);
 }

@@ -1,18 +1,10 @@
-let accordion_item = document.querySelectorAll(".accordion_item")
+const accordion_items = document.querySelectorAll(".accordion_item")
 
-accordion_item.forEach((item)=>{
-    let item_header = item.querySelector(".accordion_header")
-    item_header.addEventListener("click",()=>{
-        let accordion_body = item.querySelector(".accordion_body")
-        let arrow = item_header.querySelector(".fa-solid")
-        if(accordion_body.style.display == "none"){
-            arrow.setAttribute("class", "fa fa-solid fa-chevron-up")
-            accordion_body.style.display = "block"
-        }else{
-            accordion_body.style.display = "none"
-            arrow.setAttribute("class", "fa fa-solid fa-chevron-down")
-        }
-    })
+accordion_items.forEach((item)=>{
+    const accordion_header = item.querySelector(".accordion_header")
+    accordion_header.onclick = ()=>{
+        item.querySelector(".accordion_body").classList.toggle("d_block")
+        accordion_header.querySelector(".fa-solid").classList.toggle("arrow_rotate")
+        accordion_header.classList.toggle("bg_aqua")
+    }
 })
-
-
